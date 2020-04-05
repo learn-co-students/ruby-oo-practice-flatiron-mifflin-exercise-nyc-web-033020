@@ -9,18 +9,19 @@ pam = Manager.new("Pam", "Office", 27)
 oscar = Manager.new("Oscar", "Accounting", 31)
 ryan = Manager.new("Ryan", "Customer Service", 22)
 
-# jim = Employee.new("Jim", 55900)
-# andy = Employee.new("Andy", 48500)
-# stanley = Employee.new("Stanley", 51000)
-# angela = Employee.new("angela", 51000)
-# erin = Employee.new("erin", 51000)
-# meredith = Employee.new("meredith", 51000)
-# creed = Employee.new("Creed", 51000)
-# kelly = Employee.new("kelly", 51000)
-# kevin = Employee.new("kevin", 51000)
-# phyllis = Employee.new("phyllis", 51000)
+
 
 dwight.hire_employee("Jim", 55900)
+dwight.hire_employee("Andy", 48500)
+dwight.hire_employee("Stanley", 51000)
+dwight.hire_employee("Phyllis", 51000)
+
+erin = pam.hire_employee("Erin", 23000)
+
+angela = oscar.hire_employee("Angela", 29000)
+kevin = oscar.hire_employee("Kevin", 27400)
+
+kelly = ryan.hire_employee("Kelly", 28000)
 
 binding.pry
 puts "done"
