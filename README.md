@@ -19,8 +19,11 @@ First step to this problem is to consider your domain. At Flatiron Mifflin, an `
 
 Here are some questions to consider:
 - What are your models?
+# This is a belong to model/ The Employees belong to the Manager
 - What does your domain look like?
+
 - What are the relationships between your models?
+# Employees -{ Manager
 
 ---
 ## Deliverables
@@ -34,6 +37,7 @@ Here are some questions to consider:
     * returns a `Fixnum` that is the age of the manager
   * `Manager#employees`
     * returns an `Array` of all the employees that the manager oversees
+    # Manger has many employess 
   * `Manager.all`
     * returns an `Array` of all the managers
   * `Manager#hire_employee`
@@ -50,6 +54,7 @@ Here are some questions to consider:
     * returns a `Fixnum` that is the employee's salary
   * `Employee#manager_name`
     * returns a `String` that is the name of their manager
+    # Employee has only one manager 
   * `Employee.all`
     * returns an `Array` of all the employees
   * `Employee.paid_over`
