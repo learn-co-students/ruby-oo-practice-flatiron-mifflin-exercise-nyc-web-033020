@@ -4,10 +4,10 @@ class Manager
     attr_reader :name, :age
     attr_accessor :department
 
-  def initialize name, age, department
+  def initialize name age department
     @name = name
     @age = age
-    @department = department
+    @gdepartment = department
     Manager.all << self
   end
 
@@ -19,7 +19,7 @@ class Manager
     Employee.all.select{ |employee| employee.manager == self }
   end
 
-  def hire_employee name, pay
+  def hire_employee name pay
     Employee.new(name,pay,self)
   end
 

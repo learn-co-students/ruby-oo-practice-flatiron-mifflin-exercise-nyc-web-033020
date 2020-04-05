@@ -1,30 +1,33 @@
 class Employee
   @@all = []
-  attr_accessor :name, :age, :salary, :manager_name
-  def initialize(name,age,salary=nil,manager_name=nil)
+
+  attr_reader :name
+  attr_accessor :salary, :manager
+
+  def initialize name, salary, manager
     @name = name
-    @age = age
     @salary = salary
-    @manager_name = manager_name
+    @manager = manager
     Employee.all << self
   end
+
   def self.all
     @@all
   end
+
+  def manager_name
+    self.manager.name
+  end
+
   def tax_bracket
-    # Return array of employees +/- 1000 from instance salary
-    Employee.all.select do |employee|
-      employee.salary >= self.salary - 1000 && employee.salary <= self.salary - 1000
-    end
+    Employee.all.select{ |emp| emp.salary >= self.salary - 1000 && emp.salary <= self.salary + 1000 }
   end
-  def self.paid_over(pay)
-    self.all.select do |employee|
-      employee.salary >= pay
-    end
+
+  def self.paid_over pay
+    Employee.all.select{ |employee| employee.salary >= pay }
   end
-  def self.find_by_dept(department)
-    Manager.all.find do |manager|
-      manager.department == department
-    end.employees
+
+  def self.find_by_department dept
+    Employee.all.find{ |employee| employee.manager.department == dept }
   end
 end
