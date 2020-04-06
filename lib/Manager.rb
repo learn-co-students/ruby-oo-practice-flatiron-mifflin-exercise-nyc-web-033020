@@ -31,18 +31,16 @@ class Manager
         Manager.all.map {|manager| manager.department}
     end
 
-    # not working
     def self.average_age
         age_array = []
-        Manager.all.each do |manager|
-            manager.age << age_array
-        end
-
         sum = 0
-        age_array.each do |num|
-            sum += num
+        arr_length = 0
+        Manager.all.each do |manager|
+           age_array << manager.age
         end
-        sum / age_array.count
+        arr_length = age_array.length
+        sum = age_array.reduce(0) {|sum, n| sum + n}
+        sum / arr_length
     end
 
 end

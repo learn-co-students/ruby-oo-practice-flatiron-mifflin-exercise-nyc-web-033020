@@ -5,6 +5,7 @@ require 'pry'
 
 #Test your code here
 pam = Employee.new("Pam Beesly", 32500, "Jim")
+phyllis = Employee.new("Phyllis Vance", 33000, "Michael")
 dwight = Employee.new("Dwight Shrute", 80000, "Michael")
 kelly = Employee.new("Kelly Kapoor", 1, "Jim")
 stanley = Employee.new("Stanley Hudson", 50000, "Michael")

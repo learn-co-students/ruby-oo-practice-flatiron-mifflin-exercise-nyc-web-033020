@@ -31,8 +31,17 @@ class Employee
     end
 
     def self.find_by_department(department)
-        # Employee.all.each do |employee|
-        #     employee.find(department)
-        # end
+        
+    end
+
+    def tax_bracket
+        wage = self.salary
+        other_employees = []
+        Employee.all.each do |employee|
+            if ((wage - employee.salary).abs < 1000) || ((employee.salary - wage).abs < 1000 )
+                other_employees << employee
+            end
+        end
+        other_employees #not perfect, includes originial instance
     end
 end
